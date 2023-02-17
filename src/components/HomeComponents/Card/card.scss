@@ -1,0 +1,82 @@
+@import "../../../sass/base";
+
+.card {
+  background-color: $color-grey-light-1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr min-content;
+  grid-row-gap: 2rem;
+
+  user-select: none;
+
+  @media (max-width: 420px) {
+    grid-row-gap: 2rem;
+  }
+
+  &__img {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 1;
+    opacity: 0.8;
+    transition: all 0.4s;
+  }
+
+  &__img:hover {
+    opacity: 1 !important;
+  }
+
+  &__name {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: end;
+    z-index: 3;
+
+    width: 70%;
+    border: 0.4rem solid $color-primary;
+
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: $color-dark;
+
+    font-size: 2.3rem;
+    font-weight: 600;
+    transform: translateY(50%);
+
+    @media (max-width: 420px) {
+      font-size: 1.6rem;
+      padding: 0.5rem;
+      border: 0.3rem solid $color-primary;
+    }
+  }
+
+  &__description {
+    grid-row: 2;
+
+    font-size: 1.9rem;
+    padding: 2.5rem 2rem 0.5rem 2rem;
+
+    p {
+      align-self: start;
+    }
+
+    @media (max-width: 420px) {
+      font-size: 1.4rem;
+      padding: 0 1rem;
+      margin-top: 1.3rem;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    grid-row: 3;
+
+    @media (max-width: 420px) {
+      font-size: 1.2rem !important;
+      padding: 1.3rem !important;
+    }
+  }
+}

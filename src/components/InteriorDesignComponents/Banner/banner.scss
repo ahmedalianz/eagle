@@ -1,0 +1,133 @@
+@import "../../../sass/base";
+
+.banner {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(rgba($color-header, .70), rgba($color-header, .70)), url(../../../Resources/img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+
+    @media(max-width: 475px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__title-box {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        align-content: center;
+        transform: translateX(14rem);
+
+        border: .5rem solid $color-primary;
+
+        @media(max-width: 1300px) {
+            width: 60vw;
+        }
+
+        @media(max-width: 475px) {
+            transform: translateX(6rem);
+            width: 80vw;
+        }
+    }
+
+    &__title {
+        grid-row: 2 / span 2;
+
+        background: #fff;
+        width: 100%;
+        opacity: 0.9;
+        padding: 4rem 0;
+        text-align: center;
+        font-size: 4rem;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        color: $color-dark;
+
+        transform: translateX(-16rem);
+        margin-left: -7rem;
+        line-height: 1.3em;
+
+        @media(max-width: 1300px) {
+            font-size: 3.3rem;
+        }
+
+        @media(max-width: 475px) {
+            transform: translateX(-10rem);
+            margin-left: -4rem;
+            padding: 2rem 0rem;
+            width: 80vw;
+            font-size: 5vw;
+
+        }
+    }
+
+    &__message {
+        display: grid;
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 1;
+        height: 100%;
+
+        font-size: 1.8vw;
+        line-height: 1.4em;
+        letter-spacing: .3rem;
+
+        @media(max-width: 475px) {
+            font-size: 2.8vw;
+        }
+    }
+
+    &__case-study-box {
+        background: #fff;
+        width: 50%;
+        max-width: 350px;
+        position: absolute;
+        right: 0;
+        bottom: 125px;
+
+        float: right;
+        margin-right: 5%;
+        border-bottom: .4rem solid $color-primary;
+        background-color: rgb(248, 248, 248);
+
+        @media(max-width: 1200px) {
+            display: none;
+        }
+
+        h3 {
+            position: absolute;
+
+            background-color: $color-secondary-dark;
+            margin-left: -30px;
+            margin-top: -30px;
+
+            padding: 0 15px;
+            display: inline-block;
+        }
+
+        h3 .entry-title {
+            text-decoration: none;
+            font-size: 2.4rem;
+            color: #fff;
+            @extend %heading;
+        }
+
+        &__inner {
+            padding: 2rem;
+        }
+
+        p {
+            color: #000;
+            font-size: 1.8rem;
+            font-family: $font-display;
+            line-height: 1.4em;
+
+            &:nth-child(1) {
+                padding-top: 30px;
+                display: block;
+            }
+        }
+
+    }
+}

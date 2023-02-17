@@ -1,0 +1,70 @@
+@import "../../../sass/base";
+
+.commercial-first {
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+
+    @media (max-width: 800px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 700px) {
+        grid-column: full-start / full-end;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        margin: 1rem 1rem;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    .article__container {
+        display: grid;
+        align-content: center;
+        justify-items: center;
+
+        grid-row-gap: 2rem;
+
+        border: .4rem solid rgb(223, 198, 146);
+        background: #fff;
+
+        transform: translate(-4rem, -2rem);
+        width: 109%;
+
+        @media (max-width: 700px) {
+            transform: translate(0);
+            width: 100%;
+            background: transparent;
+            grid-row-gap: 0rem;
+        }
+
+        &--title {
+            padding: 3rem 0;
+            font-size: 3rem;
+            color: $color-dark;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            text-align: center;
+
+            @media (max-width: 500px) {
+                font-size: 2rem;
+                padding: 1rem 0;
+                letter-spacing: .6rem;
+            }
+        }
+
+        &--content {
+            font-size: 2rem;
+            padding: 0 4rem;
+
+            @media (max-width: 500px) {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+    }
+}
